@@ -61,7 +61,13 @@ extension ViewController : UITableViewDataSource {
       return UITableViewCell()
     }
     cell.configure(with: PersonFollwingTableViewCellViewModel(with : model))
+    cell.delegate = self
     return cell
   }
 }
 
+extension ViewController : PersonFollowingTableViewCellDelegate {
+  func personFollowingTableViewCell(_ cell: PersonFollowingTableViewCell, didTapWith viewModel: PersonFollwingTableViewCellViewModel) {
+
+  }
+}

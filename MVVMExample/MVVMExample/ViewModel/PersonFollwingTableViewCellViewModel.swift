@@ -10,7 +10,7 @@ import UIKit
 struct PersonFollwingTableViewCellViewModel {
   let name : String
   let username : String
-  let currentlyFollowing : Bool
+  var currentlyFollowing : Bool
   let image : UIImage?
   
   init(with model : Person) {

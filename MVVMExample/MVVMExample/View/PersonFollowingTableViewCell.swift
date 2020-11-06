@@ -7,9 +7,18 @@
 
 import UIKit
 
+protocol PersonFollowingTableViewCellDelegate : AnyObject {
+  func personFollowingTableViewCell ( _ cell : PersonFollowingTableViewCell , didTapWith viewModel : PersonFollwingTableViewCellViewModel)
+}
+
+
 class PersonFollowingTableViewCell : UITableViewCell {
   //MARK: - Properties
   static let identifier = "PersonFollowingTableViewCell"
+  
+  weak var delegate : PersonFollowingTableViewCellDelegate?
+  
+  private var viewModel : PersonFollwingTableViewCellViewModel?
   
   private let userImageView : UIImageView = {
     let imageView = UIImageView()
@@ -43,6 +52,8 @@ class PersonFollowingTableViewCell : UITableViewCell {
     contentView.addSubview(usernameLabel)
     contentView.addSubview(button)
     contentView.clipsToBounds = true
+    
+    button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
   }
   
   required init?(coder: NSCoder) {
@@ -50,6 +61,9 @@ class PersonFollowingTableViewCell : UITableViewCell {
   }
   
   func configure(with viewModel : PersonFollwingTableViewCellViewModel) {
+    
+    self.viewModel = viewModel
+    
     nameLabel.text = viewModel.name
     usernameLabel.text = viewModel.username
     userImageView.image = viewModel.image
@@ -80,7 +94,23 @@ class PersonFollowingTableViewCell : UITableViewCell {
   
   override func prepareForReuse() {
     super.prepareForReuse()
-    
+    nameLabel.text = nil
+    usernameLabel.text = nil
+    userImageView.image = nil
+    button.backgroundColor = nil
+    button.layer.borderWidth = 0
+    button.setTitle(nil, for: .normal)
   }
   
+  
+  @objc private func didTapButton() {
+    guard let viewModel = viewModel else {return}
+    
+    var newViewModel = viewModel
+    newViewModel.currentlyFollowing = !viewModel.currentlyFollowing
+    delegate?.personFollowingTableViewCell(self, didTapWith: newViewModel)
+    
+    prepareForReuse()
+    configure(with: newViewModel)
+  }
 }
