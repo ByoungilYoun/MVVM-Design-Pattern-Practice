@@ -13,6 +13,7 @@
 		0F6B5C3B255442C9007A1C62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F6B5C39255442C9007A1C62 /* Main.storyboard */; };
 		0F6B5C3D255442CA007A1C62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F6B5C3C255442CA007A1C62 /* Assets.xcassets */; };
 		0F6B5C40255442CA007A1C62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F6B5C3E255442CA007A1C62 /* LaunchScreen.storyboard */; };
+		0F6B5C4A255447CB007A1C62 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6B5C49255447CB007A1C62 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0F6B5C3C255442CA007A1C62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F6B5C3F255442CA007A1C62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F6B5C41255442CA007A1C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F6B5C49255447CB007A1C62 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				0F6B5C33255442C9007A1C62 /* AppDelegate.swift */,
 				0F6B5C35255442C9007A1C62 /* SceneDelegate.swift */,
+				0F6B5C48255447B3007A1C62 /* Model */,
 				0F6B5C37255442C9007A1C62 /* ViewController.swift */,
 				0F6B5C39255442C9007A1C62 /* Main.storyboard */,
 				0F6B5C3C255442CA007A1C62 /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				0F6B5C41255442CA007A1C62 /* Info.plist */,
 			);
 			path = MVVMExample;
+			sourceTree = "<group>";
+		};
+		0F6B5C48255447B3007A1C62 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0F6B5C49255447CB007A1C62 /* Person.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				0F6B5C38255442C9007A1C62 /* ViewController.swift in Sources */,
 				0F6B5C34255442C9007A1C62 /* AppDelegate.swift in Sources */,
+				0F6B5C4A255447CB007A1C62 /* Person.swift in Sources */,
 				0F6B5C36255442C9007A1C62 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

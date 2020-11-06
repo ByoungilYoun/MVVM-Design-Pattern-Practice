@@ -16,11 +16,14 @@ class ViewController: UIViewController {
     return table
   }()
   
+  private var models = [Person]()
+  
   //MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
     setNavi()
     configureUI()
+    configureModels()
   }
   
   //MARK: - setNavi()
@@ -34,17 +37,28 @@ class ViewController: UIViewController {
     tableView.dataSource = self
     tableView.frame = view.bounds
   }
+  
+  //MARK: - configureModels()
+  private func configureModels() {
+    let names = ["Joe", "Dan", "Jeff", "Jenny", "Emily"]
+    
+    for name in names {
+      models.append(Person(name: name)) 
+    }
+  }
 }
 
   //MARK: - UITableViewDataSource
 extension ViewController : UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 10
+    return models.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let model = models[indexPath.row]
+    
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-    cell.textLabel?.text = "Hello World"
+    cell.textLabel?.text = model.name
     return cell
   }
 }
