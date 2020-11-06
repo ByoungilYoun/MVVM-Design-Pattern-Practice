@@ -12,7 +12,7 @@ class ViewController: UIViewController {
   //MARK: - Properties
   private let tableView : UITableView = {
     let table = UITableView()
-    table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    table.register(PersonFollowingTableViewCell.self, forCellReuseIdentifier: PersonFollowingTableViewCell.identifier)
     return table
   }()
   
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     let names = ["Joe", "Dan", "Jeff", "Jenny", "Emily"]
     
     for name in names {
-      models.append(Person(name: name)) 
+      models.append(Person(name: name))
     }
   }
 }
@@ -57,7 +57,7 @@ extension ViewController : UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let model = models[indexPath.row]
     
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: PersonFollowingTableViewCell.identifier, for: indexPath) as! PersonFollowingTableViewCell
     cell.textLabel?.text = model.name
     return cell
   }
