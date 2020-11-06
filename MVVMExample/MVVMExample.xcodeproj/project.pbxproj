@@ -15,6 +15,7 @@
 		0F6B5C40255442CA007A1C62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F6B5C3E255442CA007A1C62 /* LaunchScreen.storyboard */; };
 		0F6B5C4A255447CB007A1C62 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6B5C49255447CB007A1C62 /* Person.swift */; };
 		0F6B5C4F25555D4A007A1C62 /* PersonFollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6B5C4E25555D4A007A1C62 /* PersonFollowingTableViewCell.swift */; };
+		0F6B5C5425558396007A1C62 /* PersonFollwingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6B5C5325558396007A1C62 /* PersonFollwingTableViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0F6B5C41255442CA007A1C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F6B5C49255447CB007A1C62 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		0F6B5C4E25555D4A007A1C62 /* PersonFollowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonFollowingTableViewCell.swift; sourceTree = "<group>"; };
+		0F6B5C5325558396007A1C62 /* PersonFollwingTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonFollwingTableViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		0F6B5C512555614D007A1C62 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0F6B5C5325558396007A1C62 /* PersonFollwingTableViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F6B5C38255442C9007A1C62 /* ViewController.swift in Sources */,
+				0F6B5C5425558396007A1C62 /* PersonFollwingTableViewCellViewModel.swift in Sources */,
 				0F6B5C4F25555D4A007A1C62 /* PersonFollowingTableViewCell.swift in Sources */,
 				0F6B5C34255442C9007A1C62 /* AppDelegate.swift in Sources */,
 				0F6B5C4A255447CB007A1C62 /* Person.swift in Sources */,

@@ -18,6 +18,8 @@ struct Person {
   let address : String?
   let gender : Gender
   
+  var username = "Jimmy"
+  
   init(name : String,
        birthdate : Data? = nil,
        middleName : String? = nil,

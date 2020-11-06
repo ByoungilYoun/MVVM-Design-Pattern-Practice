@@ -57,8 +57,10 @@ extension ViewController : UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let model = models[indexPath.row]
     
-    let cell = tableView.dequeueReusableCell(withIdentifier: PersonFollowingTableViewCell.identifier, for: indexPath) as! PersonFollowingTableViewCell
-    cell.textLabel?.text = model.name
+   guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonFollowingTableViewCell.identifier, for: indexPath) as? PersonFollowingTableViewCell else {
+      return UITableViewCell()
+    }
+    cell.configure(with: PersonFollwingTableViewCellViewModel(with : model))
     return cell
   }
 }
